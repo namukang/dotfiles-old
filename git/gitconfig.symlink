@@ -1,0 +1,21 @@
+[user]
+	email = dan@dskang.com
+	name = Dan Kang
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[push]
+	default = simple
