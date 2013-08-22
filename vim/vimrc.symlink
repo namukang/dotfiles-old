@@ -25,6 +25,7 @@ Bundle 'nviennot/molokai'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/neocomplcache.vim'
 " Bundle 'tomtom/quickfixsigns_vim'
 " Bundle 'tpope/vim-endwise'
 " Bundle 'tpope/vim-fugitive'
@@ -36,6 +37,15 @@ Bundle 'Townk/vim-autoclose'
 filetype indent plugin on
 
 let mapleader=','
+
+"
+" Autocompletion
+"
+
+let g:neocomplcache_enable_at_startup = 1
+
+" <TAB> completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 "
 " Colors
