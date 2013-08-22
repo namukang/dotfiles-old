@@ -1,5 +1,9 @@
 set nocompatible
 
+"
+" Vim plugins
+"
+
 " This needs to be off for Vundle, turned back on after
 filetype off
 
@@ -9,44 +13,105 @@ call vundle#rc()
 " let Vundle manage Vundle - required!
 Bundle 'gmarik/vundle'
 
-" Vim Plugins
-" Bundle 'Lokaltog/vim-powerline'
 " Bundle 'altercation/vim-colors-solarized'
 " Bundle 'cakebaker/scss-syntax.vim'
 " Bundle 'ervandew/screen'
 " Bundle 'ervandew/supertab'
 " Bundle 'fholgado/minibufexpl.vim'
-" Bundle 'godlygeek/tabular'
-" Bundle 'groenewege/vim-less'
-" Bundle 'kchmck/vim-coffee-script'
-" Bundle 'kien/ctrlp.vim'
-" Bundle 'nviennot/molokai'
-" Bundle 'quentindecock/vim-cucumber-align-pipes'
-" Bundle 'rodjek/vim-puppet'
-" Bundle 'scrooloose/nerdcommenter'
-" Bundle 'scrooloose/nerdtree'
-" Bundle 'scrooloose/syntastic'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+" Bundle 'Lokaltog/vim-powerline'
+Bundle 'nviennot/molokai'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 " Bundle 'tomtom/quickfixsigns_vim'
 " Bundle 'tpope/vim-endwise'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
 " Bundle 'vim-ruby/vim-ruby'
 
-" Colors
-syntax on
 filetype indent plugin on
 
-" Solarized theme
-" let g:solarized_termcolors=256
-" set background=dark
-" colorscheme solarized
+let mapleader=','
 
-" Map jk to ESC
+"
+" Colors
+"
+
+syntax on
+
+colorscheme molokai
+
+"
+" Search
+"
+
+" ignore case
+set ignorecase
+
+" match case if a capital letter is present in the regexp
+set smartcase
+
+" highlight matched patterns
+set hlsearch
+
+" cancel search highlighting
+map <Leader>/ :nohlsearch<cr>
+
+" highlight search result as you type it
+set incsearch
+
+"
+" NERDTree
+"
+
+nmap <C-g> :NERDTreeToggle<CR>
+let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$' ]
+
+" open NERDTree automatically when vim starts up with no files specified
+autocmd vimenter * if !argc() | NERDTree | endif
+
+" close vim if only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+"
+" Buffers
+"
+
+" allow switching from unsaved buffer
+set hidden
+
+" sets the swap (.swp) file directory
+set directory=/tmp
+
+" show line numbers
+set number
+
+" show whitespace and trailing spaces
+set list!
+set listchars=tab:▸\ ,trail:•,extends:»,precedes:«
+
+"
+" Custom shortcuts
+"
+
+" map jk to ESC
 inoremap jk <esc>
 
-" Map ; to :
+" map ; to :
 nmap ; :
 
-" Navigate using displayed lines instead of physical lines
+" navigate using displayed lines instead of physical lines
 nnoremap j gj
 nnoremap k gk
+
+" window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" allow mouse scrolling
+set mouse=a
