@@ -30,6 +30,7 @@ Bundle 'scrooloose/syntastic'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
+Bundle 'Townk/vim-autoclose'
 " Bundle 'vim-ruby/vim-ruby'
 
 filetype indent plugin on
@@ -62,6 +63,25 @@ map <Leader>/ :nohlsearch<cr>
 
 " highlight search result as you type it
 set incsearch
+
+"
+" Indentation
+"
+
+" copy indentation from previous line
+set autoindent
+
+" insert level of indentation in some cases
+set smartindent
+
+" pressing <TAB> key inserts 'softtabstop' amount of space characters
+set expandtab
+
+" width of pressing >>, <<, or ==
+set shiftwidth=2
+
+" width of pressing <TAB> or <BS> keys
+set softtabstop=2
 
 "
 " NERDTree
