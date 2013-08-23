@@ -45,8 +45,8 @@ let mapleader=','
 " <TAB> in command mode will show possible completions above command line
 set wildmenu
 
-" complete only until point of ambiguity
-set wildmode=list:longest
+" list matches, then longest common part, then all
+set wildmode=list:longest,full
 
 "
 " Autocompletion
