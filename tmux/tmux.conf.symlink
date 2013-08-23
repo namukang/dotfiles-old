@@ -76,7 +76,7 @@ setw -g automatic-rename
 
 # split 75/25 horizontally with vim
 unbind ^W
-bind ^W split-window -p 25 'vim .' \; swap-pane -D
+bind ^W split-window -p 25 'vim' \; swap-pane -D
 
 # split 75/25 horizontally
 unbind ^T
