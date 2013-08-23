@@ -39,6 +39,16 @@ filetype indent plugin on
 let mapleader=','
 
 "
+" Command mode
+"
+
+" <TAB> in command mode will show possible completions above command line
+set wildmenu
+
+" complete only until point of ambiguity
+set wildmode=list:longest
+
+"
 " Autocompletion
 "
 
@@ -107,11 +117,14 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "
-" Buffers
+" Files
 "
 
 " allow switching from unsaved buffer
 set hidden
+
+" highlight current line
+set cursorline
 
 " sets the swap (.swp) file directory
 set directory=/tmp
@@ -119,9 +132,17 @@ set directory=/tmp
 " show line numbers
 set number
 
+" always show status line
+set laststatus=2
+
 " show whitespace and trailing spaces
 set list!
 set listchars=tab:▸\ ,trail:•,extends:»,precedes:«
+
+set backspace=indent,eol,start
+
+" JSON
+au BufRead,BufNewFile *.json set ft=json syntax=javascript
 
 "
 " Custom shortcuts
