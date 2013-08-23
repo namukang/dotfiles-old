@@ -79,7 +79,7 @@ set smartcase
 set hlsearch
 
 " cancel search highlighting
-map <Leader>/ :nohlsearch<cr>
+map <Leader>/ :nohlsearch<CR>
 
 " highlight search result as you type it
 set incsearch
@@ -166,11 +166,17 @@ nnoremap <C-l> <C-w>l
 
 " helpers to edit files
 " http://vimcasts.org/e/14
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
+map <Leader>ew :e %%
+map <Leader>es :sp %%
+map <Leader>ev :vsp %%
+map <Leader>et :tabe %%
 
 " allow mouse scrolling
 set mouse=a
+
+" toggle wrapping
+map <Leader>w :set invwrap<CR>
+
+" toggle paste mode
+map <Leader>p :set invpaste<CR>
