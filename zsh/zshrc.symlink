@@ -14,9 +14,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="./bin:$PATH"
 
 # virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Devel
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
