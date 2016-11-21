@@ -7,11 +7,12 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 # binstubs
 export PATH="./bin:$PATH"
+
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/homebrew/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/homebrew/lib:$LD_LIBRARY_PATH
 
 # virtualenvwrapper
 # export WORKON_HOME=$HOME/.virtualenvs
@@ -20,3 +21,9 @@ export PATH="./bin:$PATH"
 
 # autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+# added by Anaconda2 4.2.0 installer
+export PATH="$HOME/anaconda/bin:$PATH"
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
